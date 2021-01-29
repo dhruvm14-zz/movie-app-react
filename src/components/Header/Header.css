@@ -1,0 +1,61 @@
+.Header {
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: 100% 100%;
+  object-fit: contain;
+  max-height: 80vh;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.Header__Content {
+  margin-left: 50px;
+  padding-top: 225px;
+  height: 190px;
+}
+
+.Header__Content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+  max-width: 40rem;
+}
+.Header__Content p {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  padding-top: 0.7rem;
+  max-width: 40rem;
+  height: 80px;
+}
+.Header__Content button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 0.2vw;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-right: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding-top: 1rem;
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+.Header__Content button:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  transition: all 0.2s;
+}
+.Header__bottom {
+  height: 5.4rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(19, 19, 19, 0.61),
+    black
+  );
+}
