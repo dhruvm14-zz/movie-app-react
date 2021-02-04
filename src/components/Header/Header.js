@@ -7,7 +7,6 @@ import SwiperCore, {
   Pagination,
   Scrollbar,
   A11y,
-  EffectCube,
   Autoplay,
   EffectCoverflow,
 } from "swiper";
@@ -24,7 +23,6 @@ SwiperCore.use([
   Pagination,
   Scrollbar,
   A11y,
-  EffectCube,
   Autoplay,
   EffectCoverflow,
 ]);
