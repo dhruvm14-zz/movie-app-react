@@ -1,21 +1,25 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import MovieRow from "./components/MovieRow/MovieRow";
-import endPoints from "./requests";
-import Header from "./components/Header/Header";
+import Home from "./containers/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import Search from "./containers/Search/Search";
 
 function App() {
   return (
     <div className="App">
-      <Header endPoint={endPoints.trendingMovies} />
-      <MovieRow title="Trending Movies" endPoint={endPoints.trendingMovies} />
-      <MovieRow title="Latest Movies" endPoint={endPoints.latestMovies} />
-      <MovieRow title="Top Rated" endPoint={endPoints.topRated} isLarge />
-      <MovieRow title="Action Movies" endPoint={endPoints.actionMovies} />
-      <MovieRow title="Comedy Movies" endPoint={endPoints.comedyMovies} />
-      <MovieRow title="Drama Movies" endPoint={endPoints.dramaMovies} />
-      <MovieRow title="Horror Movies" endPoint={endPoints.horrorMovies} />
-      <MovieRow title="Romance Movies" endPoint={endPoints.romanceMovies} />
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/movie/:movieID"></Route>
+          <Route exact path="/search/:searchID">
+            <Search />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

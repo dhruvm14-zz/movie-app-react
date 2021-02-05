@@ -53,6 +53,7 @@ function Header(props) {
           slidesPerView={3}
           effectCube
           autoplay
+          loop
           effect="coverflow"
           // onSlideChange={() => console.log("slide change")}
           // onSwiper={(swiper) => console.log(swiper)}

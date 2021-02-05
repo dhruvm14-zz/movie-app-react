@@ -17,6 +17,7 @@
 }
 .movieRow__poster:hover {
   transform: scale(1.05);
+  z-index: 2;
 }
 
 /* .movieRow__poster:hover .movieRow__title {
@@ -28,7 +29,7 @@
   bottom: 0;
   right: 0;
   padding: 8px;
-  margin: 10px;
+  margin: 16px;
   font-size: 12px;
   border-radius: 100px;
   background-color: blue;
@@ -55,4 +56,8 @@
 .movieRow__poster:hover .movie__title,
 .movieRow__poster:hover .movie__vote {
   display: inline;
+}
+
+.movie__search {
+  padding: 10px;
 }

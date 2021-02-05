@@ -1,0 +1,29 @@
+.Navbar {
+  background-color: rgb(37, 37, 37);
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+}
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 55px;
+}
+.navbar__search > input {
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+}
+.navbar__search > input:focus {
+  outline: none;
+}

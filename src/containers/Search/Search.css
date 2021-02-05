@@ -1,0 +1,15 @@
+.Search {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+.search__movies {
+  color: white;
+  display: flex;
+  margin: 50px 120px;
+  align-items: center;
+  flex-wrap: wrap;
+}
