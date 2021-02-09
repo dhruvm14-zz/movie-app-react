@@ -53,3 +53,30 @@
   padding-bottom: 20px;
   text-align: justify;
 }
+
+.content_info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 15px 0;
+  padding: 20px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
+.content_info p {
+  color: bisque;
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.content__link {
+  font-size: 20px;
+  padding-top: 10px;
+  color: white;
+}
+
+.content__genre {
+  margin: 5px;
+  color: rgb(126, 126, 248);
+}

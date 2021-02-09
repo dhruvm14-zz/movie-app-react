@@ -26,10 +26,10 @@
 
 .movie__vote {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
   padding: 8px;
-  margin: 16px;
+  margin: 10px;
   font-size: 12px;
   border-radius: 100px;
   background-color: blue;

@@ -12,6 +12,7 @@ class MovieRow extends Component {
   large = this.props.isLarge;
   async componentDidMount() {
     const moviesData = await axios.get(this.props.endPoint);
+    console.log(moviesData);
     this.setState({ movies: moviesData.data.results });
   }
 
@@ -23,7 +24,7 @@ class MovieRow extends Component {
   render() {
     return (
       <div className="MovieRow">
-        <h2>{this.props.title}</h2>
+        <h2 className="row__title">{this.props.title}</h2>
         <div className={`movie__row`}>
           {this.state.movies.map((movie) => (
             <Movie

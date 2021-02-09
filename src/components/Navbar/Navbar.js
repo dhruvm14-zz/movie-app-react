@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <nav className="Navbar">
       <div className="navbar__brand">
-        <Link to="/">
+        <Link style={{ color: "white", textDecoration: "none" }} to="/">
           <h1>MOVIE_APP</h1>
         </Link>
       </div>

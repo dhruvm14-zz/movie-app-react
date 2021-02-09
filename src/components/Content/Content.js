@@ -3,6 +3,7 @@ import axios from "../../axios";
 import React, { useEffect, useState } from "react";
 import "./Content.css";
 import ClearIcon from "@material-ui/icons/Clear";
+import { Link } from "react-router-dom";
 const imgBase = "https://image.tmdb.org/t/p/original";
 
 function Content(props) {
@@ -20,6 +21,10 @@ function Content(props) {
   }, [props.movieId]);
 
   console.log(selectedMovie);
+  if (selectedMovie) {
+    const day = new Date(selectedMovie.release_date);
+    console.log(day.toDateString());
+  }
 
   return (
     selectedMovie && (
@@ -31,12 +36,29 @@ function Content(props) {
               selectedMovie?.original_name}
           </h2>
           <p className="Content__overview">{selectedMovie.overview}</p>
-          <p>
-            Genre :
-            {selectedMovie.genres.map((genre) => {
-              return ` ${genre.name} `;
-            })}
-          </p>
+          <div className="content_info">
+            <p>
+              Genre :
+              {selectedMovie.genres.map((genre) => {
+                return (
+                  <Link
+                    className="content__genre"
+                    to={`/genre/${genre.id}/${genre.name}`}
+                  >
+                    {genre.name}
+                  </Link>
+                );
+              })}
+            </p>
+            <p>
+              Release Date :{" "}
+              {new Date(selectedMovie.release_date).toDateString()}
+            </p>
+            <p>Run Time : {selectedMovie.runtime} Minutes</p>
+            <Link className="content__link" to={`/movie/${selectedMovie.id}`}>
+              READ MORE
+            </Link>
+          </div>
         </div>
         <div
           className="Content__img"
