@@ -1,0 +1,27 @@
+.cast {
+  margin: 10px;
+  background-color: white !important;
+  color: black;
+  border-radius: 25px;
+  /* box-shadow: 2px 1px 16px 1px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 2px 1px 16px 1px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 2px 1px 16px 1px rgba(255, 255, 255, 0.75); */
+}
+.cast__img {
+  object-fit: cover;
+}
+
+.cast__img > img {
+  object-fit: cover;
+  max-width: 180px;
+  border-radius: 25px 25px 0 0;
+}
+
+.cast__content {
+  padding: 2px 0 0 0;
+  text-align: center;
+}
+.cast_ava {
+  padding-bottom: 90px;
+  background-color: rgb(206, 206, 206);
+}

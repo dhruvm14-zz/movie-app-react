@@ -55,9 +55,9 @@ function Content(props) {
               {new Date(selectedMovie.release_date).toDateString()}
             </p>
             <p>Run Time : {selectedMovie.runtime} Minutes</p>
-            <Link className="content__link" to={`/movie/${selectedMovie.id}`}>
+            <a className="content__link" href={`/movie/${selectedMovie.id}`}>
               READ MORE
-            </Link>
+            </a>
           </div>
         </div>
         <div

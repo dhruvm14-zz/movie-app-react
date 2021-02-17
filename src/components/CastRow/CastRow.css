@@ -1,0 +1,13 @@
+.castrow {
+  padding: 20px;
+}
+.cast_row {
+  display: flex;
+  overflow-x: scroll;
+  position: relative;
+}
+
+.cast_title {
+  font-size: 30px;
+  margin-left: 20px;
+}

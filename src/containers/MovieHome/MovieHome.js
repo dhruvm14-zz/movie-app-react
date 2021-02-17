@@ -4,10 +4,18 @@ import "./MovieHome.css";
 import axios from "axios";
 import { APIKey } from "../../requests";
 import { useParams } from "react-router";
+import BigMovie from "../../components/BigMovie/BigMovie";
+import CastRow from "../../components/CastRow/CastRow";
+import MovieRow from "../../components/MovieRow/MovieRow";
 
 function MovieHome() {
   const { movieID } = useParams();
-  const [movie, setmovie] = useState({});
+
+  const [movie, setmovie] = useState({ genres: [] });
+  const [cast, setcast] = useState({});
+  const [crew, setcrew] = useState([]);
+  const recommendedEndPoint = `/movie/${movieID}/recommendations?api_key=${APIKey}&language=en-US&page=1`;
+  const similarEndPoint = `/movie/${movieID}/similar?api_key=${APIKey}&language=en-US&page=1`;
 
   useEffect(() => {
     const getData = async () => {
@@ -17,28 +25,48 @@ function MovieHome() {
       console.log(Data.data);
       setmovie(Data.data);
     };
+    const getCrew = async () => {
+      const castData = await axios.get(
+        `https://api.themoviedb.org/3/movie/${movieID}/credits?api_key=${APIKey}&language=en-US`
+      );
+      setcast(castData.data);
+      setcrew(castData.data.crew);
+    };
     getData();
+    getCrew();
+    window.scrollTo(0, 0);
   }, [movieID]);
 
   const opts = {
-    height: "390",
-    width: "640",
+    height: "400",
+    width: "700",
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
+      mute: 1,
     },
   };
 
   return (
     <div className="MovieHome">
-      <div className="moviehome__header">
-        <div>Hey This is page for {movie.title}</div>
+      {movie && <BigMovie movie={movie} crew={crew} />}
+      {console.log(crew)}
+      <div className="movieHome__trailer">
         <div>
-          {movie.videos && (
+          {movie.videos && movie.videos.results[0] && (
             <YouTube videoId={movie.videos.results[0].key} opts={opts} />
           )}
         </div>
+        <div>Hello This is Home</div>
       </div>
+      {cast.cast && <CastRow cast={cast.cast} title="CAST" />}
+      {crew && <CastRow cast={crew} title="CREW" />}
+      <MovieRow
+        title="Recommended Movies "
+        endPoint={recommendedEndPoint}
+        isLarge
+      />
+      {console.log(similarEndPoint)}
+      <MovieRow title="Similar Movies " endPoint={similarEndPoint} isLarge />
     </div>
   );
 }

@@ -12,7 +12,6 @@ class MovieRow extends Component {
   large = this.props.isLarge;
   async componentDidMount() {
     const moviesData = await axios.get(this.props.endPoint);
-    console.log(moviesData);
     this.setState({ movies: moviesData.data.results });
   }
 
@@ -22,9 +21,10 @@ class MovieRow extends Component {
   };
 
   render() {
-    return (
+    return this.state.movies.length ? (
       <div className="MovieRow">
         <h2 className="row__title">{this.props.title}</h2>
+        {console.log(this.state.movies)}
         <div className={`movie__row`}>
           {this.state.movies.map((movie) => (
             <Movie
@@ -40,6 +40,8 @@ class MovieRow extends Component {
           <Content movieId={this.state.clickedMovie} />
         )}
       </div>
+    ) : (
+      <div></div>
     );
   }
 }

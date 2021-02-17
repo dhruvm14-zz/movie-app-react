@@ -51,15 +51,15 @@ function Header(props) {
           spaceBetween={0}
           navigation
           slidesPerView={3}
-          effectCube
           autoplay
           loop
           effect="coverflow"
           // onSlideChange={() => console.log("slide change")}
           // onSwiper={(swiper) => console.log(swiper)}
         >
-          {movies.map((movie) => (
+          {movies.map((movie, index) => (
             <SwiperSlide
+              key={index}
               className="slide"
               style={{
                 backgroundImage: `url(${imgBase}${movie.poster_path})`,

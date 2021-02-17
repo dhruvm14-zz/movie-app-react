@@ -30,11 +30,11 @@ function Search() {
       <div className="search__movies">
         {moviesData1.map((movie) => (
           <Link className="text-link" to={`/movie/${movie.id}`}>
-            <Movie key={movie.id} movie={movie} search />
+            <Movie key={movie.id} movie={movie} search large />
           </Link>
         ))}
         {moviesData2.map((movie) => (
-          <Movie key={movie.id} movie={movie} search />
+          <Movie key={movie.id} movie={movie} search large />
         ))}
       </div>
     </div>
