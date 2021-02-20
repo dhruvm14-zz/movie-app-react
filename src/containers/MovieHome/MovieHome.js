@@ -49,7 +49,6 @@ function MovieHome() {
   return (
     <div className="MovieHome">
       {movie && <BigMovie movie={movie} crew={crew} />}
-      {console.log(crew)}
       <div className="movieHome__trailer">
         <div>
           {movie.videos && movie.videos.results[0] && (

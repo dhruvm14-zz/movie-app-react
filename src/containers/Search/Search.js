@@ -31,7 +31,9 @@ function Search() {
           </Link>
         ))}
         {moviesData2.map((movie) => (
-          <Movie key={movie.id} movie={movie} search large />
+          <Link className="text-link" to={`/movie/${movie.id}`}>
+            <Movie key={movie.id} movie={movie} search large />
+          </Link>
         ))}
       </div>
     </div>
