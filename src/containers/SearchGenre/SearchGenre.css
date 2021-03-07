@@ -6,7 +6,7 @@
   width: 100%;
   flex-direction: column;
 }
-.search__movies {
+.search__gmovies {
   color: white;
   display: flex;
   margin: 50px 120px;
@@ -18,6 +18,6 @@
   color: white;
 }
 .searchgenre__header {
-  margin-top: 40px;
+  margin-top: 8rem;
   font-size: 30px;
 }

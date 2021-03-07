@@ -1,13 +1,16 @@
 import { APIKey } from "../../requests";
 import axios from "../../axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Content.css";
 import ClearIcon from "@material-ui/icons/Clear";
 import { Link } from "react-router-dom";
+import firebase, { db } from "../../firebase";
+import { AuthContext } from "../../Auth";
 const imgBase = "https://image.tmdb.org/t/p/original";
 
 function Content(props) {
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
     if (selectedMovie && selectedMovie.id === props.movieId) return;
@@ -20,10 +23,8 @@ function Content(props) {
     getData();
   }, [props.movieId]);
 
-  console.log(selectedMovie);
   if (selectedMovie) {
     const day = new Date(selectedMovie.release_date);
-    console.log(day.toDateString());
   }
 
   return (

@@ -27,7 +27,7 @@ function Search() {
       <p className="searchgenre__header">
         SEARCH RESULTS FOR <strong>{genreName.toUpperCase()}</strong>
       </p>
-      <div className="search__movies">
+      <div className="search__gmovies">
         {moviesData1.map((movie) => (
           <Link className="text-link" to={`/movie/${movie.id}`}>
             <Movie key={movie.id} movie={movie} search large />

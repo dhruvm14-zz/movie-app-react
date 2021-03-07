@@ -39,7 +39,7 @@ const BigMovie = ({ movie, crew }) => {
               <li>{movie.runtime} min</li>
             </ul>
             <ul>
-              {movie.genres.map((genre, index) => {
+              {movie.genres.slice(0, 4).map((genre, index) => {
                 return (
                   <li>
                     <Link
@@ -90,40 +90,3 @@ const BigMovie = ({ movie, crew }) => {
 };
 
 export default BigMovie;
-
-//  <div
-//     className="moviehome__header"
-//     style={{ backgroundImage: `url(${imgBase}${movie.backdrop_path})` }}
-//   >
-//     <div className="moviehome__title">
-//       <div className="moviehome__poster">
-//         <img src={imgBase + movie.poster_path} />
-//       </div>
-
-//       <div className="moviehome__content">
-//         <div className="movie__home__maintitle">
-//           {movie?.title || movie?.original_title || movie?.original_name}
-//         </div>
-//         <div className="moviehome__overview">{movie.overview}</div>
-//         <div className="moviehome__genre">
-//           <div></div>
-
-//           <div className="BigMovie__rating">
-//             <span style={{ fontSize: "28px", color: { ratingColor } }}>
-//               {console.log(ratingColor)}
-//               {movie.vote_average}
-//             </span>
-//             /10
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-{
-  /* <a
-  href={`http://www.imdb.com/title/${movie.imdb_id}/plotsummary?ref_=tt_stry_pl`}
-  target="_blank"
->
-  Read more
-</a>; */
-}
