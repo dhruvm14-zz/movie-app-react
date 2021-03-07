@@ -13,12 +13,28 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ![](images/s1.png)
 
-### GETTING MOVIES BASED ON GENRE
+### DISPLAYING MOVIE DETAILS
 
 ![](images/s2.png)
 
-### DISPLAYING MOVIE DETAILS
+### GENRE BASED SEARCH
 
 ![](images/s3.png)
+
+### MOVIE SEARCH
+
+![](images/s4.png)
+
+### MOVIE HOME
+
+![](images/s5.png)
+
+### MOVIE CAST & CREW
+
+![](images/s6.png)
+
+### SUGGESTED MOVIE
+
+![](images/s7.png)
 
 (PROJECT IS STILL UNDER DEVELOPEMENT)
