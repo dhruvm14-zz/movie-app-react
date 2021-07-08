@@ -73,7 +73,12 @@
   box-shadow: 0px 3px 20px 0px black;
   transform: scale(1.2);
 }
-
+.logo-img {
+  height: 100px;
+  position: relative;
+  left: 50px;
+  top: 20px;
+}
 .searchBox {
   position: absolute;
   top: 40px;

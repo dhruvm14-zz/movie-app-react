@@ -58,8 +58,13 @@ function MovieHome() {
   }, [movieID]);
 
   const addToFav = async () => {
-    console.log(currentUser.uid);
-    let selectedMovie = { ...movie, isFav: true };
+    let selectedMovie = { ...movie };
+    let orgMovie = { ...movie };
+    orgMovie.isFav = true;
+    delete selectedMovie.isWatch;
+    delete selectedMovie.isFav;
+
+    console.log(selectedMovie);
     await db
       .collection("users")
       .doc(currentUser.uid)
@@ -68,26 +73,35 @@ function MovieHome() {
           ...selectedMovie,
         }),
       });
-    setmovie(selectedMovie);
+    setmovie(orgMovie);
   };
 
   const remFav = async () => {
-    console.log(movie);
+    let selectedMovie = { ...movie };
+    delete selectedMovie.isWatch;
+    delete selectedMovie.isFav;
+    console.log(selectedMovie);
     await db
       .collection("users")
       .doc(currentUser.uid)
       .update({
         favourite: firebase.firestore.FieldValue.arrayRemove({
-          ...movie,
+          ...selectedMovie,
         }),
       });
-    let selectedMovie = { ...movie, isFav: false };
+    selectedMovie = { ...movie, isFav: false };
     setmovie(selectedMovie);
   };
 
   const addToWatch = async () => {
     console.log(currentUser.uid);
-    let selectedMovie = { ...movie, isWatch: true };
+    let selectedMovie = { ...movie };
+    let orgMovie = { ...movie };
+    orgMovie.isWatch = true;
+    delete selectedMovie.isWatch;
+    delete selectedMovie.isFav;
+    console.log(selectedMovie);
+
     await db
       .collection("users")
       .doc(currentUser.uid)
@@ -96,20 +110,25 @@ function MovieHome() {
           ...selectedMovie,
         }),
       });
-    setmovie(selectedMovie);
+    setmovie(orgMovie);
   };
 
   const remWatch = async () => {
     console.log(movie);
+    let selectedMovie = { ...movie };
+    delete selectedMovie.isWatch;
+    delete selectedMovie.isFav;
+    console.log(selectedMovie);
+
     await db
       .collection("users")
       .doc(currentUser.uid)
       .update({
         watchLater: firebase.firestore.FieldValue.arrayRemove({
-          ...movie,
+          ...selectedMovie,
         }),
       });
-    let selectedMovie = { ...movie, isWatch: false };
+    selectedMovie = { ...movie, isWatch: false };
     setmovie(selectedMovie);
   };
   const opts = {
@@ -130,22 +149,38 @@ function MovieHome() {
             <YouTube videoId={movie.videos.results[0].key} opts={opts} />
           )}
         </div>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           {!movie.isFav ? (
-            <button style={{ margin: "5px" }} onClick={addToFav}>
+            <button
+              style={{ margin: "5px" }}
+              onClick={addToFav}
+              className="movie__button"
+            >
               ADD TO FAV
             </button>
           ) : (
-            <button style={{ margin: "5px" }} onClick={remFav}>
+            <button
+              style={{ margin: "5px" }}
+              onClick={remFav}
+              className="movie__remFav"
+            >
               REMOVE FAV
             </button>
           )}
           {!movie.isWatch ? (
-            <button style={{ margin: "5px" }} onClick={addToWatch}>
+            <button
+              style={{ margin: "5px" }}
+              onClick={addToWatch}
+              className="movie__button"
+            >
               ADD TO WATCH LATER
             </button>
           ) : (
-            <button style={{ margin: "5px" }} onClick={remWatch}>
+            <button
+              style={{ margin: "5px" }}
+              onClick={remWatch}
+              className="movie__remWat"
+            >
               REMOVE WATCH LATER
             </button>
           )}

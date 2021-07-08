@@ -4,6 +4,7 @@ import "./Navbar.css";
 import { AuthContext } from "../../Auth";
 import { auth } from "../../firebase";
 import SearchIcon from "@material-ui/icons/Search";
+import logo from "./logo.png";
 
 function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,8 +16,8 @@ function Navbar() {
   return (
     <>
       <div className="navbar">
-        <Link to="/" style={{ position: "absolute" }}>
-          HOME
+        <Link to="/" style={{ position: "absolute", width: "100px" }}>
+          <img src={logo} className="logo-img" />
         </Link>
         <div className="navbar__header">
           <ul class="menu-bar">
@@ -64,9 +65,11 @@ function Navbar() {
             </Link>
           </div>
         </div>
-        <button className="signoutBtn" onClick={handleSignout}>
-          LOG OUT
-        </button>
+        <Link to="/">
+          <button className="signoutBtn" onClick={handleSignout}>
+            LOG OUT
+          </button>
+        </Link>
       </div>
     </>
     // <nav className="Navbar">

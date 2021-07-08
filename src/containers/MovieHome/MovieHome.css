@@ -74,7 +74,23 @@
 
 .movieHome__trailer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
+}
+.movie__button {
+  padding: 15px;
+  font-size: 18px;
+}
+.movie__remFav {
+  padding: 15px;
+  font-size: 18px;
+  background-color: rgb(230, 65, 65);
+  border: 0;
+}
+.movie__remWat {
+  padding: 15px;
+  font-size: 18px;
+  background-color: rgb(65, 90, 230);
+  border: 0;
 }
