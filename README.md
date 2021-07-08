@@ -27,14 +27,24 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### MOVIE HOME
 
-![](images/s5.png)
+![](images/s7.png)
 
-### MOVIE CAST & CREW
+### MOVIE CAST , TRAILER & ADD TO FAV / WATCH LATER BUTTON
 
 ![](images/s6.png)
 
-### SUGGESTED MOVIE
+### MOVIE CREW & SUGGESTED MOVIE
 
-![](images/s7.png)
+![](images/s5.png)
+
+### FAVOURITE MOVIES TAB
+
+![](images/s9.png)
+
+### LOGIN AND SIGNUP PAGES
+
+![](images/s10.png)
+
+![](images/s11.png)
 
 (PROJECT IS STILL UNDER DEVELOPEMENT)
